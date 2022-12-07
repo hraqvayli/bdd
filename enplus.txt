@@ -1,0 +1,30 @@
+CREATE TABLE "Registre" (
+	"IDCsp"	INTEGER,
+	"IDProjet"	INTEGER,
+	"NbrHT"	INTEGER,
+	PRIMARY KEY("IDCsp","IDProjet"),
+	FOREIGN KEY("IDProjet") REFERENCES "Projets"("IDProjet"),
+	FOREIGN KEY("IDCsp") REFERENCES "CSP"("IDCsp")
+)
+
+
+
+
+
+
+SELECT SUM(NbrHT) AS heureProjet
+FROM Heures_Travaillées
+GROUP BY IDProjet
+
+
+SELECT IDCsp AS id_correspendant
+FROM Service_Technique
+INNER JOIN Heures_Travaillées on
+
+
+
+
+W// les id des employe qui on travailler sur les projet
+
+SELECT Heures_Travaillées.IDEmploye,IDCsp from Employes
+INNER JOIN Heures_Travaillées on Employes.IDEmploye =  Heures_Travaillées.IDEmploye 
